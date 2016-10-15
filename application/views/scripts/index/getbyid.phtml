@@ -1,0 +1,42 @@
+
+<!--div id="view-content">
+	<p>View script for controller <b>Index</b> and script/action name <b>getbyid</b></p>
+</div-->
+
+
+<table class="table table-condensed">
+	<?php
+	 // print_r($this->findlot);
+	 foreach($this->findlot as $resu){
+		//echo($resu['commande_id']);
+	 
+	?>
+	<tr>
+		<td>Commande</td>
+		<td><input type="text" value="<?php echo($resu['commande_id']);?>" disabled id="cmd" /></td>
+	</tr>
+	<tr>
+		<td>Lot</td>
+		<td><input type="text" value="<?php echo($resu['lot_id']);?>" disabled id="lots"/></td>
+	</tr>	
+	<tr>
+		<td>D&eacute;but traitement CDT</td>
+		<td><input type="text" value="<?php 
+			$eff_date = new Zend_Date($resu['debut_traitement_cdt']);
+			$eff_date = $eff_date->get('YYYY-MM-dd h:m:s');
+			echo($eff_date);
+		?>" disabled id="debt"/></td>
+	</tr>	
+	<tr>
+		<td>Nombre de pli</td>
+		<td><input type="text" value="<?php echo($resu['nb_plis']); ?>" disabled id="nbpli"/></td>
+	</tr>	
+	
+	<tr>
+		<td>Nom lot</td>
+		<td><input type="text" value="<?php echo($resu['nom_lot']);?>" disabled id="nlot"/></td>
+	</tr>
+	<?php
+	}
+	?>
+</table>

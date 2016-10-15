@@ -1,0 +1,69 @@
+<?php
+$this->headMeta()->appendHttpEquiv('Content-Type', 'text/html;charset=utf-8');
+$this->headTitle()->setSeparator(' - ');
+$this->headTitle('GED');
+echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/bootstrap.css');
+echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+    <?php echo $this->headMeta(); ?>
+    <?php echo $this->headTitle(); ?>
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/bootstrap.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/dataTables.bootstrap.min.js"></script>
+	
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/dataTables.responsive.min.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/responsive.bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/jquery.bpopup.js"></script>
+	<script type="text/javascript" src="<?php echo $this->baseUrl();?>/js/script.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl();?>/css/dataTables.bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl();?>/css/responsive.bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl();?>/css/style.css"/>
+</head>
+<body>
+	  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Listing GED</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="<?php echo $this->url(array('controller'=>'index','action'=>'index'));?>">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Default</a></li>
+            <li><a href="../navbar-static-top/">Static top</a></li>
+            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+          </ul-->
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <div id="content" style="padding: 0 0 0 34px;width: 98%;">
+        <h1><?php echo $this->escape($this->title); ?></h1>
+        <?php echo $this->layout()->content; ?>
+    </div>
+</body>
+</html>
